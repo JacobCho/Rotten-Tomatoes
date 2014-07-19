@@ -10,4 +10,6 @@
 
 @interface TableViewController : UITableViewController
 
+@property (nonatomic) NSMutableArray *movies;
+
 @end

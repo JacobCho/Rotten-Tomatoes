@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "Movies.h"
 
 @interface TableViewController ()
 
@@ -18,7 +19,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -27,45 +28,69 @@
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSString *API_KEY = @"f95nzzmyhj57sx8ds3as8cfu";
+    
+    NSString *URL = [NSString stringWithFormat:@"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/opening.json?apikey=%@",API_KEY];
+    
+    NSURL *rtURL = [NSURL URLWithString:URL];
+    
+    NSData *data = [NSData dataWithContentsOfURL:rtURL];
+    
+    NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    self.movies = [NSMutableArray array];
+    
+    NSArray *moviesArray = [dataDictionary objectForKeyedSubscript:@"movies"];
+    
+    
+    for (NSDictionary *moviesDictionary in moviesArray) {
+        
+        Movies *movie = [Movies movieWithTitle:[moviesDictionary objectForKey:@"title"]];
+        movie.thumbnail = [moviesDictionary objectForKey:@"thumbnail"];
+        movie.synopsis = [moviesDictionary objectForKey:@"synopsis"];
+        movie.date = [moviesDictionary objectForKey:@"date"];
+        movie.critics_rating = [moviesDictionary objectForKey:@"critics_rating"];
+        movie.critics_score = [moviesDictionary objectForKey:@"critics_score"];
+        movie.audience_score = [moviesDictionary objectForKey:@"audience_score"];
+        [self.movies addObject:movie];
+    }
+    
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+
+    return self.movies.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
     
+    Movies *movie = [self.movies objectAtIndex:indexPath.row ];
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:movie.thumbnailURL];
+    UIImage *image = [UIImage imageWithData:imageData];
+    
+    cell.imageView.image = image;
+    
+    cell.textLabel.text = movie.title;
+    
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

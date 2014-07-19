@@ -21,6 +21,7 @@
 		52400F7B197A00CB00EDE631 /* Rotten_TomatoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52400F7A197A00CB00EDE631 /* Rotten_TomatoesTests.m */; };
 		52400F85197A010C00EDE631 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52400F84197A010C00EDE631 /* MainStoryboard.storyboard */; };
 		52400F88197A017200EDE631 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52400F87197A017200EDE631 /* TableViewController.m */; };
+		52400F8E197A2B8000EDE631 /* Movies.m in Sources */ = {isa = PBXBuildFile; fileRef = 52400F8D197A2B8000EDE631 /* Movies.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		52400F84197A010C00EDE631 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		52400F86197A017200EDE631 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		52400F87197A017200EDE631 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		52400F8C197A2B8000EDE631 /* Movies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movies.h; sourceTree = "<group>"; };
+		52400F8D197A2B8000EDE631 /* Movies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movies.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 			children = (
 				52400F86197A017200EDE631 /* TableViewController.h */,
 				52400F87197A017200EDE631 /* TableViewController.m */,
+				52400F8C197A2B8000EDE631 /* Movies.h */,
+				52400F8D197A2B8000EDE631 /* Movies.m */,
 				52400F84197A010C00EDE631 /* MainStoryboard.storyboard */,
 				52400F5B197A00CB00EDE631 /* Rotten Tomatoes */,
 				52400F74197A00CB00EDE631 /* Rotten TomatoesTests */,
@@ -250,6 +255,7 @@
 			files = (
 				52400F66197A00CB00EDE631 /* AppDelegate.m in Sources */,
 				52400F88197A017200EDE631 /* TableViewController.m in Sources */,
+				52400F8E197A2B8000EDE631 /* Movies.m in Sources */,
 				52400F62197A00CB00EDE631 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +453,7 @@
 				52400F80197A00CB00EDE631 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52400F81197A00CB00EDE631 /* Build configuration list for PBXNativeTarget "Rotten TomatoesTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +462,7 @@
 				52400F83197A00CB00EDE631 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
