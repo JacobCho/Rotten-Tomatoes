@@ -24,10 +24,12 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [self setNavBarColor];
     
     NSString *API_KEY = @"f95nzzmyhj57sx8ds3as8cfu";
     
@@ -51,7 +53,11 @@
         movie.thumbnail = [movie.posters objectForKey:@"thumbnail"];
         
         movie.synopsis = [moviesDictionary objectForKey:@"synopsis"];
-        movie.date = [moviesDictionary objectForKey:@"date"];
+        
+        // "Release_dates is a JSON object within "Title"
+        movie.release_dates = [moviesDictionary objectForKey:@"release_dates"];
+        // "Theater" is an Object within "Release_dates"
+        movie.date = [movie.release_dates objectForKey:@"theater"];
         
         // "Rating" is a JSON Object within "Title"
         movie.rating = [moviesDictionary objectForKey:@"ratings"];
@@ -89,16 +95,28 @@
     
     Movies *movie = [self.movies objectAtIndex:indexPath.row ];
     
+    // Set thumbnail image for cell
     NSData *imageData = [NSData dataWithContentsOfURL:movie.thumbnailURL];
     UIImage *image = [UIImage imageWithData:imageData];
-    
     cell.imageView.image = image;
     
+    // Set movie title for cell
     cell.textLabel.text = movie.title;
    
+    // Set critics score in detailTextLabel
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d%%",movie.critics_score];
     
     return cell;
+}
+
+- (void)setNavBarColor
+{
+    // Set navigation bar color to flat green
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:46.0/255.0 green:204.0/255.0 blue:113.0/255.0 alpha:1.0];
+    // Set navigation bar text color to white
+    NSMutableDictionary *textAttributes = [[NSMutableDictionary alloc] initWithDictionary:self.navigationController.navigationBar.titleTextAttributes];
+    [textAttributes setValue:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+    self.navigationController.navigationBar.titleTextAttributes = textAttributes;
 }
 
 

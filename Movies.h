@@ -13,7 +13,10 @@
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSDictionary *posters;
 @property (nonatomic) NSString *thumbnail;
+
+@property (nonatomic) NSDictionary *release_dates;
 @property (nonatomic) NSString *date;
+
 @property (nonatomic) NSString *synopsis;
 @property (nonatomic) NSArray *cast;
 
