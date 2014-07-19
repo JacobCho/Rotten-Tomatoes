@@ -31,12 +31,10 @@
     
     NSString *API_KEY = @"f95nzzmyhj57sx8ds3as8cfu";
     
-    NSString *URL = [NSString stringWithFormat:@"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/opening.json?apikey=%@",API_KEY];
+    NSString *URL = [NSString stringWithFormat:@"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=%@",API_KEY];
     
     NSURL *rtURL = [NSURL URLWithString:URL];
-    
     NSData *data = [NSData dataWithContentsOfURL:rtURL];
-    
     NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
     self.movies = [NSMutableArray array];
@@ -47,13 +45,23 @@
     for (NSDictionary *moviesDictionary in moviesArray) {
         
         Movies *movie = [Movies movieWithTitle:[moviesDictionary objectForKey:@"title"]];
-        movie.thumbnail = [moviesDictionary objectForKey:@"thumbnail"];
+        // "Posters" is a JSON Object within "Title"
+        movie.posters = [moviesDictionary objectForKey:@"posters"];
+        // "Thumbnail is an Object within "Posters"
+        movie.thumbnail = [movie.posters objectForKey:@"thumbnail"];
+        
         movie.synopsis = [moviesDictionary objectForKey:@"synopsis"];
         movie.date = [moviesDictionary objectForKey:@"date"];
-        movie.critics_rating = [moviesDictionary objectForKey:@"critics_rating"];
-        movie.critics_score = [moviesDictionary objectForKey:@"critics_score"];
-        movie.audience_score = [moviesDictionary objectForKey:@"audience_score"];
+        
+        // "Rating" is a JSON Object within "Title"
+        movie.rating = [moviesDictionary objectForKey:@"ratings"];
+        // Scores are JSON Objects within "Rating"
+        movie.critics_rating = [movie.rating objectForKey:@"critics_rating"];
+        movie.critics_score = [[movie.rating objectForKey:@"critics_score"]intValue];
+        movie.audience_score = (NSInteger)[movie.rating objectForKey:@"audience_score"];
+        
         [self.movies addObject:movie];
+        
     }
     
 }
@@ -87,6 +95,8 @@
     cell.imageView.image = image;
     
     cell.textLabel.text = movie.title;
+   
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d%%",movie.critics_score];
     
     return cell;
 }

@@ -11,11 +11,13 @@
 @interface Movies : NSObject
 
 @property (nonatomic) NSString *title;
+@property (nonatomic) NSDictionary *posters;
 @property (nonatomic) NSString *thumbnail;
 @property (nonatomic) NSString *date;
 @property (nonatomic) NSString *synopsis;
 @property (nonatomic) NSArray *cast;
 
+@property (nonatomic) NSDictionary *rating;
 @property (nonatomic) NSString *critics_rating;
 @property (nonatomic) NSInteger critics_score;
 @property (nonatomic) NSInteger audience_score;
