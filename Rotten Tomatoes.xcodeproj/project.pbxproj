@@ -19,6 +19,8 @@
 		52400F71197A00CB00EDE631 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52400F59197A00CB00EDE631 /* UIKit.framework */; };
 		52400F79197A00CB00EDE631 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52400F77197A00CB00EDE631 /* InfoPlist.strings */; };
 		52400F7B197A00CB00EDE631 /* Rotten_TomatoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52400F7A197A00CB00EDE631 /* Rotten_TomatoesTests.m */; };
+		52400F85197A010C00EDE631 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52400F84197A010C00EDE631 /* MainStoryboard.storyboard */; };
+		52400F88197A017200EDE631 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52400F87197A017200EDE631 /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		52400F76197A00CB00EDE631 /* Rotten TomatoesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Rotten TomatoesTests-Info.plist"; sourceTree = "<group>"; };
 		52400F78197A00CB00EDE631 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52400F7A197A00CB00EDE631 /* Rotten_TomatoesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rotten_TomatoesTests.m; sourceTree = "<group>"; };
+		52400F84197A010C00EDE631 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		52400F86197A017200EDE631 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		52400F87197A017200EDE631 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +82,9 @@
 		52400F49197A00CB00EDE631 = {
 			isa = PBXGroup;
 			children = (
+				52400F86197A017200EDE631 /* TableViewController.h */,
+				52400F87197A017200EDE631 /* TableViewController.m */,
+				52400F84197A010C00EDE631 /* MainStoryboard.storyboard */,
 				52400F5B197A00CB00EDE631 /* Rotten Tomatoes */,
 				52400F74197A00CB00EDE631 /* Rotten TomatoesTests */,
 				52400F54197A00CB00EDE631 /* Frameworks */,
@@ -219,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52400F85197A010C00EDE631 /* MainStoryboard.storyboard in Resources */,
 				52400F60197A00CB00EDE631 /* InfoPlist.strings in Resources */,
 				52400F68197A00CB00EDE631 /* Images.xcassets in Resources */,
 			);
@@ -240,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52400F66197A00CB00EDE631 /* AppDelegate.m in Sources */,
+				52400F88197A017200EDE631 /* TableViewController.m in Sources */,
 				52400F62197A00CB00EDE631 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
