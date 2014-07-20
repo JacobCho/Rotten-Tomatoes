@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "Movies.h"
+#import "InTheatresCell.h"
 
 @interface TableViewController ()
 
@@ -89,7 +90,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    InTheatresCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
     
@@ -98,13 +99,22 @@
     // Set thumbnail image for cell
     NSData *imageData = [NSData dataWithContentsOfURL:movie.thumbnailURL];
     UIImage *image = [UIImage imageWithData:imageData];
-    cell.imageView.image = image;
+    cell.thumbnail.image = image;
     
     // Set movie title for cell
-    cell.textLabel.text = movie.title;
+    cell.movieTitle.text = movie.title;
    
     // Set critics score in detailTextLabel
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d%%",movie.critics_score];
+    cell.movieRating.text = [NSString stringWithFormat:@"%d",movie.critics_score];
+    
+    if (movie.critics_score > 50) {
+        UIImage *freshImage = [UIImage imageNamed:@"tomato"];
+        cell.freshImage.image = freshImage;
+    } else {
+        UIImage *freshImage = [UIImage imageNamed:@"rotten"];
+        cell.freshImage.image = freshImage;
+    }
+    
     
     return cell;
 }
