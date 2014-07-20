@@ -25,6 +25,7 @@
 		52400F91197B56A500EDE631 /* InTheatresCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52400F90197B56A500EDE631 /* InTheatresCell.m */; };
 		52400F9A197B618400EDE631 /* tomato.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400F99197B618400EDE631 /* tomato.png */; };
 		52400F9C197B618C00EDE631 /* rotten.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400F9B197B618C00EDE631 /* rotten.png */; };
+		52400F9F197B739600EDE631 /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52400F9E197B739600EDE631 /* MovieDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		52400F90197B56A500EDE631 /* InTheatresCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InTheatresCell.m; sourceTree = "<group>"; };
 		52400F99197B618400EDE631 /* tomato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tomato.png; path = ../../../../Downloads/tomato.png; sourceTree = "<group>"; };
 		52400F9B197B618C00EDE631 /* rotten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rotten.png; path = ../../../../Downloads/rotten.png; sourceTree = "<group>"; };
+		52400F9D197B739600EDE631 /* MovieDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
+		52400F9E197B739600EDE631 /* MovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +189,8 @@
 		52400F94197B58A500EDE631 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				52400F9D197B739600EDE631 /* MovieDetailsViewController.h */,
+				52400F9E197B739600EDE631 /* MovieDetailsViewController.m */,
 				52400F86197A017200EDE631 /* TableViewController.h */,
 				52400F87197A017200EDE631 /* TableViewController.m */,
 			);
@@ -294,6 +299,7 @@
 				52400F91197B56A500EDE631 /* InTheatresCell.m in Sources */,
 				52400F88197A017200EDE631 /* TableViewController.m in Sources */,
 				52400F8E197A2B8000EDE631 /* Movies.m in Sources */,
+				52400F9F197B739600EDE631 /* MovieDetailsViewController.m in Sources */,
 				52400F62197A00CB00EDE631 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

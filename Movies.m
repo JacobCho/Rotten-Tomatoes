@@ -31,6 +31,12 @@
     return [NSURL URLWithString:self.thumbnail];
 }
 
+- (NSURL *) detailPosterURL {
+    
+    NSString *detailPoster = [self.thumbnail stringByReplacingOccurrencesOfString:@"tmb" withString:@"det"];
+    return [NSURL URLWithString:detailPoster];
+}
+
 - (NSString *) formattedDate {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -39,6 +45,7 @@
     [dateFormatter setDateFormat:@"EE MMM,dd"];
     return [dateFormatter stringFromDate:tempDate];
 }
+
 
 
 @end

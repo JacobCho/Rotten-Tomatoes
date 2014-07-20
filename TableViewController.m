@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import "Movies.h"
 #import "InTheatresCell.h"
+#import "MovieDetailsViewController.h"
 
 @interface TableViewController ()
 
@@ -65,7 +66,7 @@
         // Scores are JSON Objects within "Rating"
         movie.critics_rating = [movie.rating objectForKey:@"critics_rating"];
         movie.critics_score = [[movie.rating objectForKey:@"critics_score"]intValue];
-        movie.audience_score = (NSInteger)[movie.rating objectForKey:@"audience_score"];
+        movie.audience_score = [[movie.rating objectForKey:@"audience_score"]intValue];
         
         [self.movies addObject:movie];
         
@@ -168,15 +169,22 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"movieDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Movies *movie = [self.movies objectAtIndex:indexPath.row];
+        MovieDetailsViewController *details = (MovieDetailsViewController *)segue.destinationViewController;
+        
+        details.movies = movie;
+        
+    }
+    
 }
-*/
+
 
 @end
