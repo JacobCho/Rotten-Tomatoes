@@ -1,31 +1,30 @@
 //
-//  TableViewController.m
+//  OpeningTableViewController.m
 //  Rotten Tomatoes
 //
-//  Created by Jacob Cho on 2014-07-18.
+//  Created by Jacob Cho on 2014-07-20.
 //  Copyright (c) 2014 Jacob Cho. All rights reserved.
 //
 
-#import "TableViewController.h"
+#import "OpeningTableViewController.h"
 #import "Movies.h"
-#import "InTheatresCell.h"
+#import "OpeningCell.h"
 #import "MovieDetailsViewController.h"
 
-@interface TableViewController ()
+@interface OpeningTableViewController ()
 
 @end
 
-@implementation TableViewController
+@implementation OpeningTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        
+        // Custom initialization
     }
     return self;
 }
-
 
 - (void)viewDidLoad
 {
@@ -33,9 +32,10 @@
     
     [self setNavBarColor];
     
+    
     NSString *API_KEY = @"f95nzzmyhj57sx8ds3as8cfu";
     
-    NSString *URL = [NSString stringWithFormat:@"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=%@",API_KEY];
+    NSString *URL = [NSString stringWithFormat:@"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/opening.json?apikey=%@",API_KEY];
     
     NSURL *rtURL = [NSURL URLWithString:URL];
     NSData *data = [NSData dataWithContentsOfURL:rtURL];
@@ -72,8 +72,10 @@
         [self.movies addObject:movie];
         
     }
-    
+
+
 }
+
 
 #pragma mark - Table view data source
 
@@ -89,38 +91,6 @@
     return self.movies.count;
 }
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    InTheatresCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    Movies *movie = [self.movies objectAtIndex:indexPath.row ];
-    
-    // Set thumbnail image for cell
-    NSData *imageData = [NSData dataWithContentsOfURL:movie.thumbnailURL];
-    UIImage *image = [UIImage imageWithData:imageData];
-    cell.thumbnail.image = image;
-    
-    // Set movie title for cell
-    cell.movieTitle.text = movie.title;
-   
-    // Set critics score in detailTextLabel
-    cell.movieRating.text = [NSString stringWithFormat:@"%d",movie.critics_score];
-    
-    if (movie.critics_score > 50) {
-        UIImage *freshImage = [UIImage imageNamed:@"tomato"];
-        cell.freshImage.image = freshImage;
-    } else {
-        UIImage *freshImage = [UIImage imageNamed:@"rotten"];
-        cell.freshImage.image = freshImage;
-    }
-    
-    
-    return cell;
-}
-
 - (void)setNavBarColor
 {
     // Set navigation bar color to flat green
@@ -132,43 +102,34 @@
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+    OpeningCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    Movies *movie = [self.movies objectAtIndex:indexPath.row ];
+    
+    // Set thumbnail image for cell
+    NSData *imageData = [NSData dataWithContentsOfURL:movie.thumbnailURL];
+    UIImage *image = [UIImage imageWithData:imageData];
+    cell.thumbnail.image = image;
+    
+    // Set movie title for cell
+    cell.movieTitle.text = movie.title;
+    
+    // Set critics score in detailTextLabel
+    cell.movieRating.text = [NSString stringWithFormat:@"%d",movie.critics_score];
+    
+    if (movie.critics_score > 50) {
+        UIImage *freshImage = [UIImage imageNamed:@"tomato"];
+        cell.freshImage.image = freshImage;
+    } else {
+        UIImage *freshImage = [UIImage imageNamed:@"rotten"];
+        cell.freshImage.image = freshImage;
+    }
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    
+    return cell;
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark - Navigation
@@ -176,7 +137,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"movieDetail"]) {
+    if([segue.identifier isEqualToString:@"openingMovieDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Movies *movie = [self.movies objectAtIndex:indexPath.row];
         MovieDetailsViewController *details = (MovieDetailsViewController *)segue.destinationViewController;
@@ -184,7 +145,8 @@
         details.movies = movie;
         
     }
-    
+
+
 }
 
 

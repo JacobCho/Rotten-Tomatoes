@@ -19,8 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *movieDate;
 @property (weak, nonatomic) IBOutlet UILabel *cast;
 
-
-
 @property (nonatomic) NSMutableArray *movies;
 
 

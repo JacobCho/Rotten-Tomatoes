@@ -28,6 +28,8 @@
 		52400F9F197B739600EDE631 /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52400F9E197B739600EDE631 /* MovieDetailsViewController.m */; };
 		52400FA3197C85A000EDE631 /* greenpop.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400FA2197C85A000EDE631 /* greenpop.png */; };
 		52400FA7197C88B800EDE631 /* redpop.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400FA6197C88B800EDE631 /* redpop.png */; };
+		52400FAA197CCEA300EDE631 /* OpeningTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52400FA9197CCEA300EDE631 /* OpeningTableViewController.m */; };
+		52400FAD197CD1BD00EDE631 /* OpeningCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52400FAC197CD1BD00EDE631 /* OpeningCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,10 @@
 		52400F9E197B739600EDE631 /* MovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
 		52400FA2197C85A000EDE631 /* greenpop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenpop.png; path = ../../../../Downloads/greenpop.png; sourceTree = "<group>"; };
 		52400FA6197C88B800EDE631 /* redpop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redpop.png; path = ../../../../Downloads/redpop.png; sourceTree = "<group>"; };
+		52400FA8197CCEA300EDE631 /* OpeningTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningTableViewController.h; sourceTree = "<group>"; };
+		52400FA9197CCEA300EDE631 /* OpeningTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningTableViewController.m; sourceTree = "<group>"; };
+		52400FAB197CD1BD00EDE631 /* OpeningCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningCell.h; sourceTree = "<group>"; };
+		52400FAC197CD1BD00EDE631 /* OpeningCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +192,8 @@
 		52400F93197B58A100EDE631 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				52400FAB197CD1BD00EDE631 /* OpeningCell.h */,
+				52400FAC197CD1BD00EDE631 /* OpeningCell.m */,
 				52400F8F197B56A500EDE631 /* InTheatresCell.h */,
 				52400F90197B56A500EDE631 /* InTheatresCell.m */,
 			);
@@ -195,6 +203,8 @@
 		52400F94197B58A500EDE631 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				52400FA8197CCEA300EDE631 /* OpeningTableViewController.h */,
+				52400FA9197CCEA300EDE631 /* OpeningTableViewController.m */,
 				52400F9D197B739600EDE631 /* MovieDetailsViewController.h */,
 				52400F9E197B739600EDE631 /* MovieDetailsViewController.m */,
 				52400F86197A017200EDE631 /* TableViewController.h */,
@@ -303,10 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52400FAD197CD1BD00EDE631 /* OpeningCell.m in Sources */,
 				52400F66197A00CB00EDE631 /* AppDelegate.m in Sources */,
 				52400F91197B56A500EDE631 /* InTheatresCell.m in Sources */,
 				52400F88197A017200EDE631 /* TableViewController.m in Sources */,
 				52400F8E197A2B8000EDE631 /* Movies.m in Sources */,
+				52400FAA197CCEA300EDE631 /* OpeningTableViewController.m in Sources */,
 				52400F9F197B739600EDE631 /* MovieDetailsViewController.m in Sources */,
 				52400F62197A00CB00EDE631 /* main.m in Sources */,
 			);
