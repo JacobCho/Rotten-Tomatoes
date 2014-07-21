@@ -26,6 +26,8 @@
 		52400F9A197B618400EDE631 /* tomato.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400F99197B618400EDE631 /* tomato.png */; };
 		52400F9C197B618C00EDE631 /* rotten.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400F9B197B618C00EDE631 /* rotten.png */; };
 		52400F9F197B739600EDE631 /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52400F9E197B739600EDE631 /* MovieDetailsViewController.m */; };
+		52400FA3197C85A000EDE631 /* greenpop.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400FA2197C85A000EDE631 /* greenpop.png */; };
+		52400FA7197C88B800EDE631 /* redpop.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400FA6197C88B800EDE631 /* redpop.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		52400F9B197B618C00EDE631 /* rotten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rotten.png; path = ../../../../Downloads/rotten.png; sourceTree = "<group>"; };
 		52400F9D197B739600EDE631 /* MovieDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
 		52400F9E197B739600EDE631 /* MovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
+		52400FA2197C85A000EDE631 /* greenpop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenpop.png; path = ../../../../Downloads/greenpop.png; sourceTree = "<group>"; };
+		52400FA6197C88B800EDE631 /* redpop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redpop.png; path = ../../../../Downloads/redpop.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 		52400F5B197A00CB00EDE631 /* Rotten Tomatoes */ = {
 			isa = PBXGroup;
 			children = (
+				52400FA6197C88B800EDE631 /* redpop.png */,
+				52400FA2197C85A000EDE631 /* greenpop.png */,
 				52400F99197B618400EDE631 /* tomato.png */,
 				52400F9B197B618C00EDE631 /* rotten.png */,
 				52400F64197A00CB00EDE631 /* AppDelegate.h */,
@@ -273,10 +279,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				52400F9C197B618C00EDE631 /* rotten.png in Resources */,
+				52400FA7197C88B800EDE631 /* redpop.png in Resources */,
 				52400F85197A010C00EDE631 /* MainStoryboard.storyboard in Resources */,
 				52400F9A197B618400EDE631 /* tomato.png in Resources */,
 				52400F60197A00CB00EDE631 /* InfoPlist.strings in Resources */,
 				52400F68197A00CB00EDE631 /* Images.xcassets in Resources */,
+				52400FA3197C85A000EDE631 /* greenpop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *criticsScore;
 @property (weak, nonatomic) IBOutlet UILabel *audienceScore;
 @property (weak, nonatomic) IBOutlet UITextView *synopsis;
+@property (weak, nonatomic) IBOutlet UIImageView *criticsTomato;
+@property (weak, nonatomic) IBOutlet UIImageView *popcorn;
+@property (weak, nonatomic) IBOutlet UILabel *movieDate;
+@property (weak, nonatomic) IBOutlet UILabel *cast;
 
 
 

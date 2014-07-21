@@ -39,10 +39,10 @@
 
 - (NSString *) formattedDate {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSDate *tempDate = [dateFormatter dateFromString:self.date];
     
-    [dateFormatter setDateFormat:@"EE MMM,dd"];
+    [dateFormatter setDateFormat:@"EE, MMMM dd"];
     return [dateFormatter stringFromDate:tempDate];
 }
 

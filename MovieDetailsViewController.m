@@ -28,9 +28,6 @@
 {
     [super viewDidLoad];
     
-    
-    
-   
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -38,14 +35,41 @@
     
     Movies *movie = self.movies;
     
-    NSData *imageData = [NSData dataWithContentsOfURL:movie.detailPosterURL];
+    self.title = movie.title;
     
+    NSData *imageData = [NSData dataWithContentsOfURL:movie.detailPosterURL];
     UIImage *image = [UIImage imageWithData:imageData];
     self.poster.image = image;
     
     self.criticsScore.text = [NSString stringWithFormat:@"%d%%",movie.critics_score];
+    
+    // Set Critics score image, fresh or rotten
+    if (movie.critics_score > 50) {
+        UIImage *tomato = [UIImage imageNamed:@"tomato"];
+        self.criticsTomato.image = tomato;
+        
+    } else {
+        UIImage *rotten = [UIImage imageNamed:@"rotten"];
+        self.criticsTomato.image = rotten;
+    }
+    
+    
     self.audienceScore.text = [NSString stringWithFormat:@"%d%%",movie.audience_score];
+    
+    // Set Audience score image, red or green popcorn
+    if (movie.audience_score > 50) {
+        UIImage *redpop = [UIImage imageNamed:@"redpop"];
+        self.popcorn.image = redpop;
+    } else {
+        UIImage *greenpop = [UIImage imageNamed:@"greenpop"];
+        self.popcorn.image = greenpop;
+    }
+
+    self.movieDate.text = movie.formattedDate;
+    
     self.synopsis.text = movie.synopsis;
+    
+    self.cast.text = (NSString *)movie.cast;
 }
 
 

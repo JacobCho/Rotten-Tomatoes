@@ -68,6 +68,20 @@
         movie.critics_score = [[movie.rating objectForKey:@"critics_score"]intValue];
         movie.audience_score = [[movie.rating objectForKey:@"audience_score"]intValue];
         
+        NSArray *castArray = [moviesDictionary objectForKeyedSubscript:@"abridged_cast"];
+        
+        for (NSDictionary *castDictionary in castArray) {
+
+            for (int i = 0; i < castArray.count; i++) {
+                
+                
+                NSString *name = [castDictionary objectForKey:@"name"];
+                [movie.cast addObject:name];
+              
+            }
+            
+        }
+        
         [self.movies addObject:movie];
         
     }

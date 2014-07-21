@@ -18,7 +18,8 @@
 @property (nonatomic) NSString *date;
 
 @property (nonatomic) NSString *synopsis;
-@property (nonatomic) NSArray *cast;
+@property (nonatomic) NSArray *abridged_cast;
+@property (nonatomic) NSMutableArray *cast;
 
 @property (nonatomic) NSDictionary *rating;
 @property (nonatomic) NSString *critics_rating;
