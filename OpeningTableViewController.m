@@ -120,10 +120,10 @@
     cell.movieRating.text = [NSString stringWithFormat:@"%d",movie.critics_score];
     
     if (movie.critics_score > 50) {
-        UIImage *freshImage = [UIImage imageNamed:@"tomato"];
+        UIImage *freshImage = [UIImage imageNamed:@"flattomato"];
         cell.freshImage.image = freshImage;
     } else {
-        UIImage *freshImage = [UIImage imageNamed:@"rotten"];
+        UIImage *freshImage = [UIImage imageNamed:@"flatrotten"];
         cell.freshImage.image = freshImage;
     }
 

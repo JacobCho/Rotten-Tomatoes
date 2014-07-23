@@ -45,11 +45,11 @@
     
     // Set Critics score image, fresh or rotten
     if (movie.critics_score > 50) {
-        UIImage *tomato = [UIImage imageNamed:@"tomato"];
+        UIImage *tomato = [UIImage imageNamed:@"flattomato"];
         self.criticsTomato.image = tomato;
         
     } else {
-        UIImage *rotten = [UIImage imageNamed:@"rotten"];
+        UIImage *rotten = [UIImage imageNamed:@"flatrotten"];
         self.criticsTomato.image = rotten;
     }
     
@@ -58,10 +58,10 @@
     
     // Set Audience score image, red or green popcorn
     if (movie.audience_score > 50) {
-        UIImage *redpop = [UIImage imageNamed:@"redpop"];
+        UIImage *redpop = [UIImage imageNamed:@"flatpopcorn"];
         self.popcorn.image = redpop;
     } else {
-        UIImage *greenpop = [UIImage imageNamed:@"greenpop"];
+        UIImage *greenpop = [UIImage imageNamed:@"greenpopcorn"];
         self.popcorn.image = greenpop;
     }
 
