@@ -12,6 +12,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self customizeUserInterface];
 
     return YES;
 }
@@ -41,6 +42,24 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)customizeUserInterface {
+    
+    // Customize the tab bar
+    
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    
+    UITabBar *tabBar = tabBarController.tabBar;
+    
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"TabBackground"]];
+    
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"SelectedTab"]];
+
+    
+    
 }
 
 @end

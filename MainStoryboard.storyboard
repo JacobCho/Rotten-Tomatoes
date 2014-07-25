@@ -109,7 +109,7 @@
                                 <color key="textColor" red="0.4941176471" green="0.60392156860000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Synopsis" translatesAutoresizingMaskIntoConstraints="NO" id="BlE-kQ-sDk">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" editable="NO" text="Synopsis" translatesAutoresizingMaskIntoConstraints="NO" id="BlE-kQ-sDk">
                                 <rect key="frame" x="20" y="295" width="280" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -161,7 +161,7 @@
         <scene sceneID="gLW-wM-dO1">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="Dtn-ED-0Gn" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="cH7-sb-fHm">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -176,11 +176,13 @@
             </objects>
             <point key="canvasLocation" x="-1707" y="931"/>
         </scene>
-        <!--Navigation Controller - In Theatres-->
+        <!--Navigation Controller-->
         <scene sceneID="dmk-K8-IjV">
             <objects>
                 <navigationController definesPresentationContext="YES" id="VOi-Dv-CYh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="In Theatres" id="ibl-Cf-cND"/>
+                    <tabBarItem key="tabBarItem" title="" image="InTheatres.png" id="ibl-Cf-cND">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tO5-mN-lgK">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -192,7 +194,7 @@
             </objects>
             <point key="canvasLocation" x="-1173" y="532"/>
         </scene>
-        <!--Opening Table View Controller - Opening Movies-->
+        <!--Opening Table View Controller - Opening Soon-->
         <scene sceneID="Amf-UG-NXe">
             <objects>
                 <tableViewController id="CoE-sN-zsZ" customClass="OpeningTableViewController" sceneMemberID="viewController">
@@ -247,17 +249,19 @@
                             <outlet property="delegate" destination="CoE-sN-zsZ" id="6VP-9o-WOG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Opening Movies" id="Ioh-bP-N4L"/>
+                    <navigationItem key="navigationItem" title="Opening Soon" id="Ioh-bP-N4L"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hf-be-qTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-544" y="1271"/>
         </scene>
-        <!--Navigation Controller - Opening Movies-->
+        <!--Navigation Controller-->
         <scene sceneID="abB-xG-BBV">
             <objects>
                 <navigationController definesPresentationContext="YES" id="8Ih-Y5-Fc6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Opening Movies" id="NaJ-Yq-lz4"/>
+                    <tabBarItem key="tabBarItem" title="" image="OpeningSoon.png" id="NaJ-Yq-lz4">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tTR-xk-H3S">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -270,6 +274,10 @@
             <point key="canvasLocation" x="-1154" y="1265"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="InTheatres.png" width="160" height="49"/>
+        <image name="OpeningSoon.png" width="160" height="49"/>
+    </resources>
     <color key="tintColor" red="0.94780373086734693" green="0.29716467785623379" blue="0.25821137916932041" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -277,6 +285,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="PjE-bS-36F"/>
+        <segue reference="IQ2-o7-CKk"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -30,6 +30,10 @@
 		52400FC6197F821C00EDE631 /* flatrotten.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400FC2197F821C00EDE631 /* flatrotten.png */; };
 		52400FC7197F821C00EDE631 /* flattomato.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400FC3197F821C00EDE631 /* flattomato.png */; };
 		52400FC8197F821C00EDE631 /* greenpopcorn.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400FC4197F821C00EDE631 /* greenpopcorn.png */; };
+		52400FD21980400D00EDE631 /* TabBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400FCD1980400D00EDE631 /* TabBackground.png */; };
+		52400FD41981FB2000EDE631 /* InTheatres.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400FD31981FB2000EDE631 /* InTheatres.png */; };
+		52400FD61981FC6900EDE631 /* OpeningSoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400FD51981FC6900EDE631 /* OpeningSoon.png */; };
+		52400FD81981FEF600EDE631 /* SelectedTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 52400FD71981FEF600EDE631 /* SelectedTab.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		52400FC2197F821C00EDE631 /* flatrotten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flatrotten.png; sourceTree = "<group>"; };
 		52400FC3197F821C00EDE631 /* flattomato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flattomato.png; sourceTree = "<group>"; };
 		52400FC4197F821C00EDE631 /* greenpopcorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenpopcorn.png; sourceTree = "<group>"; };
+		52400FCD1980400D00EDE631 /* TabBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBackground.png; sourceTree = "<group>"; };
+		52400FD31981FB2000EDE631 /* InTheatres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InTheatres.png; sourceTree = "<group>"; };
+		52400FD51981FC6900EDE631 /* OpeningSoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpeningSoon.png; sourceTree = "<group>"; };
+		52400FD71981FEF600EDE631 /* SelectedTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectedTab.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +147,10 @@
 		52400F5B197A00CB00EDE631 /* Rotten Tomatoes */ = {
 			isa = PBXGroup;
 			children = (
+				52400FD71981FEF600EDE631 /* SelectedTab.png */,
+				52400FD51981FC6900EDE631 /* OpeningSoon.png */,
+				52400FD31981FB2000EDE631 /* InTheatres.png */,
+				52400FCD1980400D00EDE631 /* TabBackground.png */,
 				52400FC1197F821C00EDE631 /* flatpopcorn.png */,
 				52400FC2197F821C00EDE631 /* flatrotten.png */,
 				52400FC3197F821C00EDE631 /* flattomato.png */,
@@ -290,9 +302,13 @@
 			files = (
 				52400F85197A010C00EDE631 /* MainStoryboard.storyboard in Resources */,
 				52400F60197A00CB00EDE631 /* InfoPlist.strings in Resources */,
+				52400FD21980400D00EDE631 /* TabBackground.png in Resources */,
+				52400FD41981FB2000EDE631 /* InTheatres.png in Resources */,
 				52400FC5197F821C00EDE631 /* flatpopcorn.png in Resources */,
 				52400FC6197F821C00EDE631 /* flatrotten.png in Resources */,
 				52400FC7197F821C00EDE631 /* flattomato.png in Resources */,
+				52400FD61981FC6900EDE631 /* OpeningSoon.png in Resources */,
+				52400FD81981FEF600EDE631 /* SelectedTab.png in Resources */,
 				52400F68197A00CB00EDE631 /* Images.xcassets in Resources */,
 				52400FC8197F821C00EDE631 /* greenpopcorn.png in Resources */,
 			);
