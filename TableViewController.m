@@ -33,9 +33,7 @@
     
     [self setNavBarColor];
     
-    NSString *API_KEY = @"f95nzzmyhj57sx8ds3as8cfu";
-    
-    NSString *URL = [NSString stringWithFormat:@"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=%@",API_KEY];
+    NSString *URL = [RT_URL stringByAppendingString:API_KEY];
     
     NSURL *rtURL = [NSURL URLWithString:URL];
     NSData *data = [NSData dataWithContentsOfURL:rtURL];

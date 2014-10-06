@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define API_KEY @"f95nzzmyhj57sx8ds3as8cfu"
+#define RT_URL @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/opening.json?apikey="
+
 @interface OpeningTableViewController : UITableViewController
 
 

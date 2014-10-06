@@ -54,7 +54,6 @@
 		52400F5D197A00CB00EDE631 /* Rotten Tomatoes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Rotten Tomatoes-Info.plist"; sourceTree = "<group>"; };
 		52400F5F197A00CB00EDE631 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52400F61197A00CB00EDE631 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		52400F63197A00CB00EDE631 /* Rotten Tomatoes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rotten Tomatoes-Prefix.pch"; sourceTree = "<group>"; };
 		52400F64197A00CB00EDE631 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		52400F65197A00CB00EDE631 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		52400F67197A00CB00EDE631 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -169,7 +168,6 @@
 				52400F5D197A00CB00EDE631 /* Rotten Tomatoes-Info.plist */,
 				52400F5E197A00CB00EDE631 /* InfoPlist.strings */,
 				52400F61197A00CB00EDE631 /* main.m */,
-				52400F63197A00CB00EDE631 /* Rotten Tomatoes-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -456,6 +454,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rotten Tomatoes/Rotten Tomatoes-Prefix.pch";
 				INFOPLIST_FILE = "Rotten Tomatoes/Rotten Tomatoes-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -469,6 +468,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rotten Tomatoes/Rotten Tomatoes-Prefix.pch";
 				INFOPLIST_FILE = "Rotten Tomatoes/Rotten Tomatoes-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
