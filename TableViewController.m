@@ -36,40 +36,48 @@
     NSString *URL = [RT_URL stringByAppendingString:API_KEY];
     
     NSURL *rtURL = [NSURL URLWithString:URL];
-    NSData *data = [NSData dataWithContentsOfURL:rtURL];
-    NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
-    self.movies = [NSMutableArray array];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *data = [NSData dataWithContentsOfURL:rtURL];
+        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+         dispatch_async(dispatch_get_main_queue(), ^{
+             self.movies = [NSMutableArray array];
+             
+             NSArray *moviesArray = [dataDictionary objectForKeyedSubscript:@"movies"];
+             
+             
+             for (NSDictionary *moviesDictionary in moviesArray) {
+                 
+                 Movies *movie = [Movies movieWithTitle:[moviesDictionary objectForKey:@"title"]];
+                 // "Posters" is a JSON Object within "Title"
+                 movie.posters = [moviesDictionary objectForKey:@"posters"];
+                 // "Thumbnail is an Object within "Posters"
+                 movie.thumbnail = [movie.posters objectForKey:@"thumbnail"];
+                 
+                 movie.synopsis = [moviesDictionary objectForKey:@"synopsis"];
+                 
+                 // "Release_dates is a JSON object within "Title"
+                 movie.release_dates = [moviesDictionary objectForKey:@"release_dates"];
+                 // "Theater" is an Object within "Release_dates"
+                 movie.date = [movie.release_dates objectForKey:@"theater"];
+                 
+                 // "Rating" is a JSON Object within "Title"
+                 movie.rating = [moviesDictionary objectForKey:@"ratings"];
+                 // Scores are JSON Objects within "Rating"
+                 movie.critics_rating = [movie.rating objectForKey:@"critics_rating"];
+                 movie.critics_score = [[movie.rating objectForKey:@"critics_score"]intValue];
+                 movie.audience_score = [[movie.rating objectForKey:@"audience_score"]intValue];
+                 
+                 
+                 [self.movies addObject:movie];
+             }
+             
+         });
+    });
+
     
-    NSArray *moviesArray = [dataDictionary objectForKeyedSubscript:@"movies"];
     
-    
-    for (NSDictionary *moviesDictionary in moviesArray) {
-        
-        Movies *movie = [Movies movieWithTitle:[moviesDictionary objectForKey:@"title"]];
-        // "Posters" is a JSON Object within "Title"
-        movie.posters = [moviesDictionary objectForKey:@"posters"];
-        // "Thumbnail is an Object within "Posters"
-        movie.thumbnail = [movie.posters objectForKey:@"thumbnail"];
-        
-        movie.synopsis = [moviesDictionary objectForKey:@"synopsis"];
-        
-        // "Release_dates is a JSON object within "Title"
-        movie.release_dates = [moviesDictionary objectForKey:@"release_dates"];
-        // "Theater" is an Object within "Release_dates"
-        movie.date = [movie.release_dates objectForKey:@"theater"];
-        
-        // "Rating" is a JSON Object within "Title"
-        movie.rating = [moviesDictionary objectForKey:@"ratings"];
-        // Scores are JSON Objects within "Rating"
-        movie.critics_rating = [movie.rating objectForKey:@"critics_rating"];
-        movie.critics_score = [[movie.rating objectForKey:@"critics_score"]intValue];
-        movie.audience_score = [[movie.rating objectForKey:@"audience_score"]intValue];
-        
-        
-        [self.movies addObject:movie];
-        
-    }
+       
     
 }
 

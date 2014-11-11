@@ -37,11 +37,19 @@
     
     self.title = movie.title;
     
-    NSData *imageData = [NSData dataWithContentsOfURL:movie.detailPosterURL];
-    UIImage *image = [UIImage imageWithData:imageData];
-    self.poster.image = image;
     
-    self.criticsScore.text = [NSString stringWithFormat:@"%d%%",movie.critics_score];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *imageData = [NSData dataWithContentsOfURL:movie.detailPosterURL];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIImage *image = [UIImage imageWithData:imageData];
+            self.poster.image = image;
+        });
+    });
+
+    
+    
+    
+    self.criticsScore.text = [NSString stringWithFormat:@"%d%%",(int)movie.critics_score];
     
     // Set Critics score image, fresh or rotten
     if (movie.critics_score > 50) {
@@ -54,7 +62,7 @@
     }
     
     
-    self.audienceScore.text = [NSString stringWithFormat:@"%d%%",movie.audience_score];
+    self.audienceScore.text = [NSString stringWithFormat:@"%d%%",(int)movie.audience_score];
     
     // Set Audience score image, red or green popcorn
     if (movie.audience_score > 50) {

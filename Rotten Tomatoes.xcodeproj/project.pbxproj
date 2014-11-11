@@ -83,6 +83,7 @@
 		52400FD31981FB2000EDE631 /* InTheatres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InTheatres.png; sourceTree = "<group>"; };
 		52400FD51981FC6900EDE631 /* OpeningSoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpeningSoon.png; sourceTree = "<group>"; };
 		52400FD71981FEF600EDE631 /* SelectedTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectedTab.png; sourceTree = "<group>"; };
+		526DB4A919F2FD90001F29D0 /* Rotten Tomatoes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rotten Tomatoes-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +169,7 @@
 				52400F5D197A00CB00EDE631 /* Rotten Tomatoes-Info.plist */,
 				52400F5E197A00CB00EDE631 /* InfoPlist.strings */,
 				52400F61197A00CB00EDE631 /* main.m */,
+				526DB4A919F2FD90001F29D0 /* Rotten Tomatoes-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
